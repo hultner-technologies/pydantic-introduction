@@ -19,9 +19,9 @@ Introduction to the Python Pydantic library
 ## Talks
 ### ⠠⠵ Python Pizza, 2020 April 25 (Remote)
 **Give your data classes super powers with pydantic**, _25 April 2020, 14:12 UTC_  
-The speaker schedule for the next Python Pizza conference is up, and I'm one of the speakers. The conference will be held remotely, tickets are €30 and all the proceeds will go to [Doctors Without Borders](
+The speaker schedule for the next Python Pizza conference is up, and I'm one of the speakers. The conference will be held remotely, [tickets](https://ti.to/acpyss/remote-python-pizza-2020-1) are €30 and all the proceeds will go to [Doctors Without Borders](
 https://www.msf.org/)!  
-https://ti.to/acpyss/remote-python-pizza-2020-1
+
 
 If you or your company can't afford the ticket there's also a [financial aid program](https://docs.google.com/forms/d/e/1FAIpQLSeEzqiE9bTCiM2dOQ9Numku2xJHPJKbRj9cqMGqxSD3KVlxOA/viewform).
 
