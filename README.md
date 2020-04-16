@@ -27,7 +27,7 @@ If you or your company can't afford the ticket there's also a [financial aid pro
 
 
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/LzNBfPVtrPk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-[![Speaker at Python Pizza 2020, Alexander Hultnér talks about pydantic](https://img.youtube.com/vi/LzNBfPVtrPk/0.jpg)](https://www.youtube.com/watch?v=LzNBfPVtrPk)
+[![Speaker at Python Pizza 2020, Alexander Hultnér talks about pydantic](https://i.ytimg.com/vi/LzNBfPVtrPk/maxresdefault.jpg)](https://www.youtube.com/watch?v=LzNBfPVtrPk)
 
 - [Slides](https://slides.com/hultner/)
 - [Conference site](https://remote.python.pizza)
