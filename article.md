@@ -1,7 +1,3 @@
-```python
-def s(x): return " "*(10+x)
-print(s(5)+".\n"+s(4)+"..:\n"+s(2)+"Hultnér\n"+s(0)+"Technologies\n\n@ahultner | https://hultner.se/")
-```
 
                    .
                   ..:
