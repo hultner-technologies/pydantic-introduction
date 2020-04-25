@@ -453,3 +453,7 @@ Very useful JSON-tools for API's
 Easy to migrate from dataclasses
 Lots of useful features
 Try it out!
+
+## Want to hear more from me? 
+I'm making a course on property based testing in python using Hypothesis.  
+[Sign up here](https://forms.gle/yRWapypPXdPFSLME7)
