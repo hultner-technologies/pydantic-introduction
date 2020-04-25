@@ -7,13 +7,58 @@
 </p>
 
 # ⠠⠵ Introduction to pydantic
-Introduction to the Python Pydantic library
+**Introduction to the Python Pydantic library.**  
+Take your data classes to the next level! Showcasing run time type checking, data serialization and deserialization, custom validators and of course data class integration. 
+Make it easy to go from standard data classes to pydantic models.
 
 ## ⠠⠵ Quick reference
 
 ```python
 # Minimal usage example
-…
+from pydantic import BaseModel, validator, root_validator
+from enum import Enum
+
+class Topping(str, Enum):
+    mozzarella = 'mozzarella'
+    tomato_sauce = 'tomato sauce'
+    prosciutto = 'prosciutto'
+    basil = 'basil'
+    rucola = 'rucola'
+
+
+class Pizza(BaseModel):
+    style: str
+    toppings: Tuple[Topping, ...]
+    
+
+class BakedPizza(Pizza):
+    # For simplicity in the example we use int for temperature
+    oven_temperature: int
+        
+    # A validator looking at a single property
+    @validator('style')
+    def check_style(cls, style):
+        house_styles = ("Napoli", "Roman", "Italian")
+        if style not in house_styles:
+            raise ValueError(f"We only cook the following styles: {house_styles}, given: {style}")
+        return style
+    
+    # Root validators check the entire model
+    @root_validator
+    def check_temp(cls, values):
+        style, temp = values.get("style"), values.get("oven_temperature")
+        
+        if style != "Napoli":
+            # We don't have any special rules yet for the other styles
+            return values
+
+        if 350 <= temp <= 400: 
+            # Target temperature 350 - 400°C, ideally around 375°C
+            return values
+
+        raise ValueError(f"Napoli pizzas require a oven_temperature in the range of 350 - 400°C, given: {temp}°C")
+
+
 ```
 
 ## Talks
@@ -29,20 +74,26 @@ If you or your company can't afford the ticket there's also a [financial aid pro
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/LzNBfPVtrPk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 [![Speaker at Python Pizza 2020, Alexander Hultnér talks about pydantic](https://i.ytimg.com/vi/LzNBfPVtrPk/maxresdefault.jpg)](https://www.youtube.com/watch?v=LzNBfPVtrPk)
 
-- [Slides](https://slides.com/hultner/)
+- [Slides](http://slides.com/hultner/python-pizza-2020/#/)
 - [Conference site](https://remote.python.pizza)
-- [Jupyter Lab Notebook](…)
-- …
-…
+- [Jupyter Lab Notebook](demo/pydantic.ipynb)
+- [Announcement video](https://www.youtube.com/watch?v=LzNBfPVtrPk)
 
 ## ⠠⠵ FAQ, pydantic
-**Q…?**  
-Answer…
+**Is the pydantic type-checker strict?**  
+No, pydantic currently favours parsing and will coerce the type if possible. A [strict-mode](https://github.com/samuelcolvin/pydantic/issues/1098) is being worked on.
 
+**Can pydantics runtime type-checker be used on functions?**  
+[Yes](https://pydantic-docs.helpmanual.io/usage/validation_decorator/), through the @validate_arguments decorator. But the feature is at the time of writing still in beta (2020-04-25).
+
+**Do settings managment support `.env`?**. 
+[Yes](https://pydantic-docs.helpmanual.io/usage/settings/) it does!
+
+**I have a question not covered here, where can I ask it?** I'm [@ahultner on twitter](https://twitter.com/ahultner), otherwise you can also email me (address in slides).
 
 ## ⠠⠵ Links
-- [Docs](https://pydantic-docs.helpmanual.io)
-- [Github](https://github.com/samuelcolvin/pydantic/)
+- [Pydantic docs](https://pydantic-docs.helpmanual.io)
+- [Pydantic Github](https://github.com/samuelcolvin/pydantic/)
 - [FastAPI](https://fastapi.tiangolo.com)
 - [Dataclasses](https://docs.python.org/3/library/dataclasses.html)
 - [NamedTuple](https://docs.python.org/3/library/typing.html#typing.NamedTuple)
