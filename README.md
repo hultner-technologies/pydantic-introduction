@@ -86,7 +86,7 @@ No, pydantic currently favours parsing and will coerce the type if possible. A [
 **Can pydantics runtime type-checker be used on functions?**  
 [Yes](https://pydantic-docs.helpmanual.io/usage/validation_decorator/), through the @validate_arguments decorator. But the feature is at the time of writing still in beta (2020-04-25).
 
-**Do settings managment support `.env`?**. 
+**Do settings managment support `.env`?**  
 [Yes](https://pydantic-docs.helpmanual.io/usage/settings/) it does!
 
 **I have a question not covered here, where can I ask it?**  
