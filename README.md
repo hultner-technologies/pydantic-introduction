@@ -89,7 +89,8 @@ No, pydantic currently favours parsing and will coerce the type if possible. A [
 **Do settings managment support `.env`?**. 
 [Yes](https://pydantic-docs.helpmanual.io/usage/settings/) it does!
 
-**I have a question not covered here, where can I ask it?** I'm [@ahultner on twitter](https://twitter.com/ahultner), otherwise you can also email me (address in slides).
+**I have a question not covered here, where can I ask it?**  
+I'm [@ahultner on twitter](https://twitter.com/ahultner), otherwise you can also email me (address in slides).
 
 ## ⠠⠵ Links
 - [Pydantic docs](https://pydantic-docs.helpmanual.io)
